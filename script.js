@@ -1,3 +1,32 @@
+let lastScrollTop = 0;
+    const nav = document.querySelector('nav');
+
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (currentScroll > lastScrollTop) {
+            // Scrolling down
+            nav.classList.add('hidden');
+        } else {
+            // Scrolling up
+            nav.classList.remove('hidden');
+        }
+
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For mobile or negative scroll
+    });
+
+
+
+const toggleBtn = document.getElementById('toggle-btn');
+const navLeft = document.querySelector('.nav-left');
+const navRight = document.querySelector('.nav-right');
+
+toggleBtn.addEventListener('click', () => {
+    navLeft.classList.toggle('active');
+    navRight.classList.toggle('active');
+});
+
+
 
 // Listen for scroll events
 window.addEventListener('scroll', function () {
@@ -88,12 +117,12 @@ try {
 document.querySelectorAll('.show-more-btn').forEach((button) => {
   button.addEventListener('click', function() {
       const imageItem = this.closest('.image-item');
-      const longText = imageItem.querySelector('.long-text');
+      const longText = imageItem.querySelector('.long-text', 'long-text4');
       // Toggle the visibility of the long text
       longText.style.display = longText.style.display === 'block' ? 'none' : 'block';
       
       // Change the button text based on the visibility of the long text
-      this.textContent = longText.style.display === 'block' ? 'Show Less' : 'Show More';
+      this.textContent = longText.style.display === 'block' ? 'Show Less' : 'Read More';
   });
 });
 
@@ -106,7 +135,7 @@ document.querySelectorAll('.show-more-btn').forEach((button) => {
       longText.style.display = longText.style.display === 'block' ? 'none' : 'block';
       
       // Change the button text based on the visibility of the long text
-      this.textContent = longText.style.display === 'block' ? 'Show Less' : 'Show More';
+      this.textContent = longText.style.display === 'block' ? 'Show Less' : 'Read More';
   });
 });
 
@@ -128,7 +157,7 @@ document.querySelectorAll('.show-more-btn').forEach((button) => {
       longText.style.display = longText.style.display === 'block' ? 'none' : 'block';
       
       // Change the button text based on the visibility of the long text
-      this.textContent = longText.style.display === 'block' ? 'Show Less' : 'Show More';
+      this.textContent = longText.style.display === 'block' ? 'Show Less' : 'Read More';
   });
 });
 
@@ -145,6 +174,4 @@ document.querySelectorAll('.show-more-btn').forEach(button => {
         imageItem.classList.toggle('active');
     });
 });
-
-
 
