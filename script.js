@@ -1,3 +1,14 @@
+const toggleBtn = document.getElementById('toggle-btn'); // Hamburger menu button
+const navs = document.querySelector('.navs'); // Navs container
+const navLeft = document.querySelector('.nav-left'); // Left nav
+const navRight = document.querySelector('.nav-right'); // Right nav
+
+toggleBtn.addEventListener('click', () => {
+    navs.classList.toggle('active'); // Show/hide navs menu
+    navLeft.style.display = 'none'; // Hide nav-left
+    navRight.style.display = 'none'; // Hide nav-right
+});
+
 let lastScrollTop = 0;
     const nav = document.querySelector('nav');
 
@@ -14,17 +25,6 @@ let lastScrollTop = 0;
 
         lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For mobile or negative scroll
     });
-
-
-
-const toggleBtn = document.getElementById('toggle-btn');
-const navLeft = document.querySelector('.nav-left');
-const navRight = document.querySelector('.nav-right');
-
-toggleBtn.addEventListener('click', () => {
-    navLeft.classList.toggle('active');
-    navRight.classList.toggle('active');
-});
 
 
 
