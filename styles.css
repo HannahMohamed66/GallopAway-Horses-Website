@@ -2108,6 +2108,7 @@ nav::before {
 
 .point .label {
     display: inline-block;
+    z-index: 3;
     transform: translate(0%, -10%); 
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -2121,6 +2122,7 @@ nav::before {
     padding: 30px 10px 0 15px; /* Add padding to move text downward */
     text-align: center;
     color: #d4671a;
+    z-index: 3;
 }
 
 .point:hover {
@@ -2131,10 +2133,12 @@ nav::before {
     border: 2px solid #20422c84;
     padding: 10px;
     overflow: visible;
+    z-index: 3;
 }
 
 .point:hover .label {
     display: none; /* Hide label in expanded view */
+    z-index: 3;
 }
 
 .point:hover .text {
@@ -2142,9 +2146,9 @@ nav::before {
 }
 
 /* Specific positioning for points relative to the image */
-.head {
-    top: 15%; /* Position for head point */
-    left: 65%;
+.hooves {
+    top: 75%; /* Position for head point */
+    left: 60%;
 }
 
 .body {
@@ -2172,9 +2176,9 @@ nav::before {
     left: 71%;
 }
 
-.joints {
-    top: 70%;
-    left: 60%;
+.teeth {
+    top: 27%;
+    left: 80%;
 }
 
 @media only screen and (max-width: 1200px){
